@@ -1,47 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kalkulator Kompleks</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="calculator">
-      <div class="display" id="display"></div>
-      <div class="buttons">
-        <!-- Baris Fungsi -->
-        <button onclick="operation('sqrt')" class="gray">√</button>
-        <button onclick="operation('pow')" class="gray">x²</button>
-        <button onclick="operation('sin')" class="gray">sin</button>
-        <button onclick="operation('cos')" class="gray">cos</button>
+<div class="kalkulator">
+          <div class="bar-kal">
+            <div class="exit-kal">
+              <i class="fas fa-times ex-kal"></i>
+            </div>
+            <div class="minim-kal">
+              <i class="fas fa-minus"></i>
+            </div>
+          </div>
 
-        <!-- Baris Clear dan Operasi -->
-        <button onclick="clearDisplay()" class="gray">C</button>
-        <button onclick="toggleSign()" class="gray">+/-</button>
-        <button onclick="operation('%')" class="gray">%</button>
-        <button onclick="operation('/')" class="orange">÷</button>
-
-        <!-- Angka dan Operasi -->
-        <button onclick="appendValue('7')">7</button>
-        <button onclick="appendValue('8')">8</button>
-        <button onclick="appendValue('9')">9</button>
-        <button onclick="operation('*')" class="orange">×</button>
-        <button onclick="appendValue('4')">4</button>
-        <button onclick="appendValue('5')">5</button>
-        <button onclick="appendValue('6')">6</button>
-        <button onclick="operation('-')" class="orange">−</button>
-        <button onclick="appendValue('1')">1</button>
-        <button onclick="appendValue('2')">2</button>
-        <button onclick="appendValue('3')">3</button>
-        <button onclick="operation('+')" class="orange">+</button>
-
-        <!-- Baris Angka dan Hasil -->
-        <button onclick="appendValue('0')" class="zero">0</button>
-        <button onclick="appendValue('.')">.</button>
-        <button onclick="calculate()" class="red">=</button>
-      </div>
+          <div class="engine">
+            <form name="form">
+                <input type="text" name="hasil" class="hasil">
+            </form>
+    
+            <table>
+                <br>
+    
+                <tr>
+                    <td><input type="button" class="button" value="C" onclick="clean()"></td>
+                    <td><input type="button" class="button" value="<" onclick="back()"></td>
+                    <td><input type="button" class="button" value="/" onclick="insert('/')"></td>
+                    <td><input type="button" class="button" value="x" onclick="insert('*')"></td>
+                </tr>
+    
+                <tr>
+                    <td><input type="button" class="button" value="7" onclick="insert(7)"></td>
+                    <td><input type="button" class="button" value="8" onclick="insert(8)"></td>
+                    <td><input type="button" class="button" value="9" onclick="insert(9)"></td>
+                    <td><input type="button" class="button" value="-" onclick="insert('-')"></td>
+                </tr>
+    
+                <tr>
+                    <td><input type="button" class="button" value="4" onclick="insert(4)"></td>
+                    <td><input type="button" class="button" value="5" onclick="insert(5)"></td>
+                    <td><input type="button" class="button" value="6" onclick="insert(6)"></td>
+                    <td><input type="button" class="button" value="+" onclick="insert('+')"></td>
+                </tr>
+    
+                <tr>
+                    <td><input type="button" class="button" value="3" onclick="insert(3)"></td>
+                    <td><input type="button" class="button" value="2" onclick="insert(2)"></td>
+                    <td><input type="button" class="button" value="1" onclick="insert(1)"></td>
+                    <td rowspan="5"><input type="button" class="button blue" value="=" onclick="equal()"></td>
+                </tr>
+    
+                <tr>
+                    <td colspan="2"><input type="button" class="button null" value="0" onclick="insert(0)"></td>
+                    <td><input type="button" class="button" value="." onclick="insert('.')"></td>
+                </tr>
+            </table>
+        </div>
     </div>
-    <script src="calculator.js"></script>
-  </body>
-</html>
