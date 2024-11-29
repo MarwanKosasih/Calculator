@@ -12,10 +12,6 @@
   border-radius: 15px;
 }
 
-.kalkulator.open {
-  visibility: visible;
-}
-
 .kalkulator .bar-kal {
   width: 100%;
   height: 40px;
